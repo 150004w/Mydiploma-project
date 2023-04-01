@@ -1,0 +1,21 @@
+clear all
+close all
+clc
+load 30_08_updated_21_errors_n_wholebitnumber_all_coded10m1time.mat
+wholebitnumber=wholebitnumber1;
+errorcount=errorcount1;
+load 30_08_updated_21_errors_n_wholebitnumber_all_coded10m2time.mat
+wholebitnumber=wholebitnumber1+wholebitnumber;
+errorcount=errorcount1+errorcount;
+load 30_08_updated_21_errors_n_wholebitnumber_all_coded10m3time.mat
+wholebitnumber=wholebitnumber1+wholebitnumber;
+errorcount=errorcount1+errorcount;
+load 30_08_updated_21_errors_n_wholebitnumber_all_coded10m4time.mat
+wholebitnumber=wholebitnumber1+wholebitnumber;
+errorcount=errorcount1+errorcount;
+
+BER=errorcount./wholebitnumber
+save 30_08_updated_21_errors_n_wholebitnumber_all_coded10m errorcount wholebitnumber BER
+semilogy(0:29,BER)
+grid on
+
